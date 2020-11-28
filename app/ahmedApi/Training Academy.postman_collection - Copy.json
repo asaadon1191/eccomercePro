@@ -1,0 +1,882 @@
+{
+	"info": {
+		// "_postman_id": "2ec4bb74-5834-4fb4-aa6b-7581685b2163",
+		"name": "Ahmed Mohamed Sabry",
+		// "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "regster",
+			"request": {
+				"method": "POST",
+				"header": [
+					"Accept"		: "application/vnd.api+json",
+					"Content-Type"	: "application/vnd.api+json",
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "ahmed",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "adddemr@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ahmed1191",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/regster",
+					"protocol": "localhost:8000",
+					
+					"path": [
+						"api",
+						"POSTS"
+					]
+				}
+			},
+			"response": []
+		},
+
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					"Accept"		: "application/vnd.api+json",
+					"Content-Type"	: "application/vnd.api+json",
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "phone",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ahmed1191",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/login?phone=12345678&password=ahmed1191",
+					"protocol": "https",
+					"host": [
+						"localhost:8000"
+					],
+					"path": [
+						"api",
+						"POSTS"
+					]
+				}
+			},
+			"response": [
+				"user": {
+					"id": 2,
+					"name": "ahmed",
+					"email": "adddemr@gmail.com",
+					"phone": "12345678",
+					"email_verified_at": null,
+					"created_at": "2020-11-27T18:15:56.000000Z",
+					"updated_at": "2020-11-27T18:15:56.000000Z"
+				},
+				"access_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiODc3ZGI0ODE0ODA0Y2RjM2FkOTZkZjVlZThjMWQ3OGFmMDQyYzU5MmRmYmIzMmU2ZDcwNTYyMWY3YzE4N2RmZmFkY2Y2OTdiOWMzMGM1MWUiLCJpYXQiOjE2MDY1ODc3MzMsIm5iZiI6MTYwNjU4NzczMywiZXhwIjoxNjM4MTIzNzMzLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.mqM-XvbtPQjVg4h55qKbEH_wt_b8DEjFqgV8twryaoFtj4GeZ_heG8_S9qbwHkdCvDI3kjmTxJW6E0iCqQBqDTg8LSa6rH_eWvv7ym2FccLc5zcd-5dYAfTO6yvuvEzfSmBzrR5FtocpVWMk_HfVOLbkqFJxW-bH_swAOwC8A3UFfIxoQRkgyhTE-MbT6SdojOxSQDSsiluzOYLDeSRxRjAj1mPbCQrEP3oOFc8wN5lTG4C2qQEMIVBAAtWNmCBFlTo4xlnVOgZUaC3B22puvqT9Oy0FbduqGlA9AiWEwi0AcWXQRrHonerONIZhFpCc-wixGTXzo4a-hldcwvaCNXD179GllU8oL25HxZR2upBWyEYt25HIcEPAdOgQ2gW2bGNpsr3B97C--hb1Sh-Ou7ktNPMstnFPDApju4StSgCHlDUJsrsU1HsdY-6udctdpToPbYT2L9wkkm3WJCBKRRGTlvyeiM348j4x1vjRai3Yvwls9BmhDWjYAvMYbqTXCgwghE0eDKFxgKIge7eb2qR7kEB5IMiUQ-Ay1Lts7A9xUucLjm5Qt0vBz1T07mBk0i7p5CSxGIIU0_eQgnBPIOLaJKAHYc6abfhFtFs2xq4wEOj9lEr3BQJSrWAUpZijOPkFtu3ko7NDiyso7GttrFA0v5dPwWi77daCpkaA7w4"
+			}
+			]
+		},
+
+		{
+			"name": "store new cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzNmNjNkNzk3YTk1MWM4ZDg4ZDM3YmQ1OTgzNTg0MTdkM2NhNTBkYjAxNzI3YWUwYmVhYjE3ODRiNDljODYxM2JiMzdlZGY5YjVlMGNiMTYiLCJpYXQiOjE2MDY1MDEwMjAsIm5iZiI6MTYwNjUwMTAyMCwiZXhwIjoxNjM4MDM3MDE5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.izFHyMRzo8LqNmZRxVulWmNe5pKw8sc-WZidzll2jHhOKmbXFYwK5gHJtFuhGkzjtgwP4UvBH9GTh3MYsMNFdrkvkp3yQsjtcA3KU9zArTRUIzT3arAVcKjA1PBi-fLJsDnrcZF_6Jd1V_h1vBXMsfEatEcfplDKvoPVDl9P9e6Nlg4JJ9y1-Km9YhiQS9ZR6QnMD7pcOVv2BRCuPJ5PswJk71fTldOI7Pj7M2QpHR0JoACo5q27NLfyVbPmdPetezSvYbAPyF2KyxmvIyhae__E4Zr_aEUQwnf48qD2XqAOQkXXidOZsaV0AjH1dqjlblNC-eFtHCou6QEt_X1ny4QeZtndRtz9z0x7V6qr4s9FHJJUPeqUcjsn4WmKD-OoEBixtqJGwVVKKkh1Ihqwv3zDV3JYFcT28aLLka8t-_GyYaqkYiQAEIkHD_ypcDamzKhnUtd_0_8cFFyR_Pwsv7YYPNl5SqSpZBfrlhKycOhpBPAmAlMrE01iggr2wwx2n0R5xa2tYnW5wCTl6ip8A02yqUyiRHmv60G92Qm2yd6wcsMgotoQbW-MOBaE_5RyPMS0enhwTIsm81qeoh8aZgeXIQPlUF9oJeyB6BSbiRw8qIbrbyKByC9R2SHxzzP8gDJnyM-D72khWkvaBJg_HrvnOYEAFIUnaRCeGEUiRkY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "form-data",
+					"form-data": [
+						{
+							"key": "qrt",
+							"value": "5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/orders/store_cart/1",
+					"protocol": "localhos:8000",
+					
+					"path": [
+						"api",
+						"orders",
+						"store_cart",
+						"id"
+					]
+				}
+			},
+			"response": [
+				{
+					"msg": {
+						"user_id": 2,
+						"product_id": 1,
+						"qty": "1",
+						"total_price": 784521,
+						"updated_at": "2020-11-28T18:29:40.000000Z",
+						"created_at": "2020-11-28T18:29:40.000000Z",
+						"id": 4
+					},
+					"status": 200,
+					"data": null
+				}
+			]
+		},
+
+		{
+			"name": "store new order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzNmNjNkNzk3YTk1MWM4ZDg4ZDM3YmQ1OTgzNTg0MTdkM2NhNTBkYjAxNzI3YWUwYmVhYjE3ODRiNDljODYxM2JiMzdlZGY5YjVlMGNiMTYiLCJpYXQiOjE2MDY1MDEwMjAsIm5iZiI6MTYwNjUwMTAyMCwiZXhwIjoxNjM4MDM3MDE5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.izFHyMRzo8LqNmZRxVulWmNe5pKw8sc-WZidzll2jHhOKmbXFYwK5gHJtFuhGkzjtgwP4UvBH9GTh3MYsMNFdrkvkp3yQsjtcA3KU9zArTRUIzT3arAVcKjA1PBi-fLJsDnrcZF_6Jd1V_h1vBXMsfEatEcfplDKvoPVDl9P9e6Nlg4JJ9y1-Km9YhiQS9ZR6QnMD7pcOVv2BRCuPJ5PswJk71fTldOI7Pj7M2QpHR0JoACo5q27NLfyVbPmdPetezSvYbAPyF2KyxmvIyhae__E4Zr_aEUQwnf48qD2XqAOQkXXidOZsaV0AjH1dqjlblNC-eFtHCou6QEt_X1ny4QeZtndRtz9z0x7V6qr4s9FHJJUPeqUcjsn4WmKD-OoEBixtqJGwVVKKkh1Ihqwv3zDV3JYFcT28aLLka8t-_GyYaqkYiQAEIkHD_ypcDamzKhnUtd_0_8cFFyR_Pwsv7YYPNl5SqSpZBfrlhKycOhpBPAmAlMrE01iggr2wwx2n0R5xa2tYnW5wCTl6ip8A02yqUyiRHmv60G92Qm2yd6wcsMgotoQbW-MOBaE_5RyPMS0enhwTIsm81qeoh8aZgeXIQPlUF9oJeyB6BSbiRw8qIbrbyKByC9R2SHxzzP8gDJnyM-D72khWkvaBJg_HrvnOYEAFIUnaRCeGEUiRkY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/orders/store",
+					"protocol": "localhost:8000",
+					"host": [],
+					"path": [
+						"api",
+						"orders",
+						"store"
+					]
+				}
+			},
+			"response": [
+				{
+					"msg": "New order created successfaly",
+					"status": 200,
+					"data": {
+						"order_number": "ORD.5fc29902827d6",
+						"user_id": 2,
+						"total_price": 784521,
+						"updated_at": "2020-11-28T18:37:54.000000Z",
+						"created_at": "2020-11-28T18:37:54.000000Z",
+						"id": 27
+					}
+				}
+			]
+		},
+
+		{
+			"name": "show order detailes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzNmNjNkNzk3YTk1MWM4ZDg4ZDM3YmQ1OTgzNTg0MTdkM2NhNTBkYjAxNzI3YWUwYmVhYjE3ODRiNDljODYxM2JiMzdlZGY5YjVlMGNiMTYiLCJpYXQiOjE2MDY1MDEwMjAsIm5iZiI6MTYwNjUwMTAyMCwiZXhwIjoxNjM4MDM3MDE5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.izFHyMRzo8LqNmZRxVulWmNe5pKw8sc-WZidzll2jHhOKmbXFYwK5gHJtFuhGkzjtgwP4UvBH9GTh3MYsMNFdrkvkp3yQsjtcA3KU9zArTRUIzT3arAVcKjA1PBi-fLJsDnrcZF_6Jd1V_h1vBXMsfEatEcfplDKvoPVDl9P9e6Nlg4JJ9y1-Km9YhiQS9ZR6QnMD7pcOVv2BRCuPJ5PswJk71fTldOI7Pj7M2QpHR0JoACo5q27NLfyVbPmdPetezSvYbAPyF2KyxmvIyhae__E4Zr_aEUQwnf48qD2XqAOQkXXidOZsaV0AjH1dqjlblNC-eFtHCou6QEt_X1ny4QeZtndRtz9z0x7V6qr4s9FHJJUPeqUcjsn4WmKD-OoEBixtqJGwVVKKkh1Ihqwv3zDV3JYFcT28aLLka8t-_GyYaqkYiQAEIkHD_ypcDamzKhnUtd_0_8cFFyR_Pwsv7YYPNl5SqSpZBfrlhKycOhpBPAmAlMrE01iggr2wwx2n0R5xa2tYnW5wCTl6ip8A02yqUyiRHmv60G92Qm2yd6wcsMgotoQbW-MOBaE_5RyPMS0enhwTIsm81qeoh8aZgeXIQPlUF9oJeyB6BSbiRw8qIbrbyKByC9R2SHxzzP8gDJnyM-D72khWkvaBJg_HrvnOYEAFIUnaRCeGEUiRkY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/orders/show/17",
+					"protocol": "localhost:8000",
+					"host": [],
+					"path": [
+						"api",
+						"orders",
+						"show",
+						"id"
+					]
+				}
+			},
+			"response": [
+				{
+					"msg": "",
+					"status": 200,
+					"data": {
+						"id": 17,
+						"order_number": "ORD.5fc26fd602987",
+						"user_id": 2,
+						"total_price": 784721,
+						"status": "completed",
+						"cart": null,
+						"created_at": "2020-11-28T15:42:14.000000Z",
+						"updated_at": "2020-11-28T17:35:49.000000Z",
+						"productes": [
+							{
+								"id": 1,
+								"name": "car",
+								"quantity": 145,
+								"price": 784521,
+								"description": "dsds llklkl o ih ujhjh h jh",
+								"photo": null,
+								"created_at": "2020-11-27T18:18:22.000000Z",
+								"updated_at": "2020-11-27T18:18:22.000000Z",
+								"pivot": {
+									"order_id": 17,
+									"product_id": 1
+								}
+							},
+							{
+								"id": 2,
+								"name": "mobile",
+								"quantity": 145,
+								"price": 784521,
+								"description": "dsds llklkl o ih ujhjh h jh",
+								"photo": null,
+								"created_at": "2020-11-27T18:18:36.000000Z",
+								"updated_at": "2020-11-27T18:18:36.000000Z",
+								"pivot": {
+									"order_id": 17,
+									"product_id": 2
+								}
+							},
+							{
+								"id": 3,
+								"name": "laptop",
+								"quantity": 145,
+								"price": 784521,
+								"description": "dsds llklkl o ih ujhjh h jh",
+								"photo": null,
+								"created_at": "2020-11-27T18:18:47.000000Z",
+								"updated_at": "2020-11-27T18:18:47.000000Z",
+								"pivot": {
+									"order_id": 17,
+									"product_id": 3
+								}
+							}
+						]
+					}
+				}
+			]
+		},
+
+		{
+			"name": "show all order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzNmNjNkNzk3YTk1MWM4ZDg4ZDM3YmQ1OTgzNTg0MTdkM2NhNTBkYjAxNzI3YWUwYmVhYjE3ODRiNDljODYxM2JiMzdlZGY5YjVlMGNiMTYiLCJpYXQiOjE2MDY1MDEwMjAsIm5iZiI6MTYwNjUwMTAyMCwiZXhwIjoxNjM4MDM3MDE5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.izFHyMRzo8LqNmZRxVulWmNe5pKw8sc-WZidzll2jHhOKmbXFYwK5gHJtFuhGkzjtgwP4UvBH9GTh3MYsMNFdrkvkp3yQsjtcA3KU9zArTRUIzT3arAVcKjA1PBi-fLJsDnrcZF_6Jd1V_h1vBXMsfEatEcfplDKvoPVDl9P9e6Nlg4JJ9y1-Km9YhiQS9ZR6QnMD7pcOVv2BRCuPJ5PswJk71fTldOI7Pj7M2QpHR0JoACo5q27NLfyVbPmdPetezSvYbAPyF2KyxmvIyhae__E4Zr_aEUQwnf48qD2XqAOQkXXidOZsaV0AjH1dqjlblNC-eFtHCou6QEt_X1ny4QeZtndRtz9z0x7V6qr4s9FHJJUPeqUcjsn4WmKD-OoEBixtqJGwVVKKkh1Ihqwv3zDV3JYFcT28aLLka8t-_GyYaqkYiQAEIkHD_ypcDamzKhnUtd_0_8cFFyR_Pwsv7YYPNl5SqSpZBfrlhKycOhpBPAmAlMrE01iggr2wwx2n0R5xa2tYnW5wCTl6ip8A02yqUyiRHmv60G92Qm2yd6wcsMgotoQbW-MOBaE_5RyPMS0enhwTIsm81qeoh8aZgeXIQPlUF9oJeyB6BSbiRw8qIbrbyKByC9R2SHxzzP8gDJnyM-D72khWkvaBJg_HrvnOYEAFIUnaRCeGEUiRkY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/orders/show/17",
+					"protocol": "localhost:8000",
+					"host": [],
+					"path": [
+						"api",
+						"orders",
+						"index"
+					]
+				}
+			},
+			"response": [
+				{
+					"msg": "",
+					"status": 200,
+					"data": [
+						{
+							"id": 1,
+							"order_number": null,
+							"user_id": 2,
+							"total_price": 3138084,
+							"status": "pending",
+							"cart": "O:14:\"App\\Users\\Cart\":3:{s:5:\"items\";a:2:{i:2;a:5:{s:4:\"name\";s:6:\"mobile\";s:5:\"price\";d:784521;s:3:\"qty\";i:2;s:5:\"image\";N;s:2:\"id\";i:2;}i:3;a:5:{s:4:\"name\";s:6:\"laptop\";s:5:\"price\";d:784521;s:3:\"qty\";s:1:\"2\";s:5:\"image\";N;s:2:\"id\";i:3;}}s:8:\"totalQty\";i:4;s:10:\"totalPrice\";d:3138084;}",
+							"created_at": "2020-11-28T09:51:42.000000Z",
+							"updated_at": "2020-11-28T09:51:42.000000Z"
+						},
+						{
+							"id": 2,
+							"order_number": "ORD.5fc266b778fe4",
+							"user_id": 2,
+							"total_price": 1569167,
+							"status": "pending",
+							"cart": null,
+							"created_at": "2020-11-28T15:03:19.000000Z",
+							"updated_at": "2020-11-28T15:03:19.000000Z"
+						},
+						{
+							"id": 8,
+							"order_number": "ORD.5fc26ad75410f",
+							"user_id": 2,
+							"total_price": 784521,
+							"status": "pending",
+							"cart": null,
+							"created_at": "2020-11-28T15:20:55.000000Z",
+							"updated_at": "2020-11-28T15:20:55.000000Z"
+						},
+						{
+							"id": 9,
+							"order_number": "ORD.5fc26b816b84c",
+							"user_id": 2,
+							"total_price": 0,
+							"status": "pending",
+							"cart": null,
+							"created_at": "2020-11-28T15:23:45.000000Z",
+							"updated_at": "2020-11-28T15:23:45.000000Z"
+						},
+						{
+							"id": 17,
+							"order_number": "ORD.5fc26fd602987",
+							"user_id": 2,
+							"total_price": 784721,
+							"status": "completed",
+							"cart": null,
+							"created_at": "2020-11-28T15:42:14.000000Z",
+							"updated_at": "2020-11-28T17:35:49.000000Z"
+						},
+						{
+							"id": 18,
+							"order_number": "ORD.5fc2708a01782",
+							"user_id": 2,
+							"total_price": 200,
+							"status": "pending",
+							"cart": null,
+							"created_at": "2020-11-28T15:45:14.000000Z",
+							"updated_at": "2020-11-28T15:45:14.000000Z"
+						},
+						{
+							"id": 19,
+							"order_number": "ORD.5fc2739eed48e",
+							"user_id": 2,
+							"total_price": 0,
+							"status": "pending",
+							"cart": null,
+							"created_at": "2020-11-28T15:58:22.000000Z",
+							"updated_at": "2020-11-28T15:58:22.000000Z"
+						},
+						{
+							"id": 20,
+							"order_number": "ORD.5fc273ce69059",
+							"user_id": 2,
+							"total_price": 0,
+							"status": "pending",
+							"cart": null,
+							"created_at": "2020-11-28T15:59:10.000000Z",
+							"updated_at": "2020-11-28T15:59:10.000000Z"
+						},
+						{
+							"id": 24,
+							"order_number": "ORD.5fc274e4cf6db",
+							"user_id": 2,
+							"total_price": 0,
+							"status": "pending",
+							"cart": null,
+							"created_at": "2020-11-28T16:03:48.000000Z",
+							"updated_at": "2020-11-28T16:03:48.000000Z"
+						},
+						{
+							"id": 25,
+							"order_number": "ORD.5fc275143eef5",
+							"user_id": 2,
+							"total_price": 0,
+							"status": "pending",
+							"cart": null,
+							"created_at": "2020-11-28T16:04:36.000000Z",
+							"updated_at": "2020-11-28T16:04:36.000000Z"
+						},
+						{
+							"id": 26,
+							"order_number": "ORD.5fc275d550832",
+							"user_id": 2,
+							"total_price": 0,
+							"status": "pending",
+							"cart": null,
+							"created_at": "2020-11-28T16:07:49.000000Z",
+							"updated_at": "2020-11-28T16:07:49.000000Z"
+						},
+						{
+							"id": 27,
+							"order_number": "ORD.5fc29902827d6",
+							"user_id": 2,
+							"total_price": 784521,
+							"status": "pending",
+							"cart": null,
+							"created_at": "2020-11-28T18:37:54.000000Z",
+							"updated_at": "2020-11-28T18:37:54.000000Z"
+						}
+					]
+				}
+			]
+		},
+
+		{
+			"name": "update status order",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzNmNjNkNzk3YTk1MWM4ZDg4ZDM3YmQ1OTgzNTg0MTdkM2NhNTBkYjAxNzI3YWUwYmVhYjE3ODRiNDljODYxM2JiMzdlZGY5YjVlMGNiMTYiLCJpYXQiOjE2MDY1MDEwMjAsIm5iZiI6MTYwNjUwMTAyMCwiZXhwIjoxNjM4MDM3MDE5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.izFHyMRzo8LqNmZRxVulWmNe5pKw8sc-WZidzll2jHhOKmbXFYwK5gHJtFuhGkzjtgwP4UvBH9GTh3MYsMNFdrkvkp3yQsjtcA3KU9zArTRUIzT3arAVcKjA1PBi-fLJsDnrcZF_6Jd1V_h1vBXMsfEatEcfplDKvoPVDl9P9e6Nlg4JJ9y1-Km9YhiQS9ZR6QnMD7pcOVv2BRCuPJ5PswJk71fTldOI7Pj7M2QpHR0JoACo5q27NLfyVbPmdPetezSvYbAPyF2KyxmvIyhae__E4Zr_aEUQwnf48qD2XqAOQkXXidOZsaV0AjH1dqjlblNC-eFtHCou6QEt_X1ny4QeZtndRtz9z0x7V6qr4s9FHJJUPeqUcjsn4WmKD-OoEBixtqJGwVVKKkh1Ihqwv3zDV3JYFcT28aLLka8t-_GyYaqkYiQAEIkHD_ypcDamzKhnUtd_0_8cFFyR_Pwsv7YYPNl5SqSpZBfrlhKycOhpBPAmAlMrE01iggr2wwx2n0R5xa2tYnW5wCTl6ip8A02yqUyiRHmv60G92Qm2yd6wcsMgotoQbW-MOBaE_5RyPMS0enhwTIsm81qeoh8aZgeXIQPlUF9oJeyB6BSbiRw8qIbrbyKByC9R2SHxzzP8gDJnyM-D72khWkvaBJg_HrvnOYEAFIUnaRCeGEUiRkY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/orders/update/17",
+					"protocol": "localhost:8000",
+					"host": [],
+					"path": [
+						"api",
+						"orders",
+						"update",
+						"17"
+					]
+				}
+			},
+			"response": [
+				{
+					"msg": "Order Updated Successfaly",
+					"status": 200,
+					"data": {
+						"id": 17,
+						"order_number": "ORD.5fc26fd602987",
+						"user_id": 2,
+						"total_price": 784721,
+						"status": "completed",
+						"cart": null,
+						"created_at": "2020-11-28T15:42:14.000000Z",
+						"updated_at": "2020-11-28T18:55:31.000000Z"
+					}
+				}
+			]
+		},
+
+		{
+			"name": "show all products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzNmNjNkNzk3YTk1MWM4ZDg4ZDM3YmQ1OTgzNTg0MTdkM2NhNTBkYjAxNzI3YWUwYmVhYjE3ODRiNDljODYxM2JiMzdlZGY5YjVlMGNiMTYiLCJpYXQiOjE2MDY1MDEwMjAsIm5iZiI6MTYwNjUwMTAyMCwiZXhwIjoxNjM4MDM3MDE5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.izFHyMRzo8LqNmZRxVulWmNe5pKw8sc-WZidzll2jHhOKmbXFYwK5gHJtFuhGkzjtgwP4UvBH9GTh3MYsMNFdrkvkp3yQsjtcA3KU9zArTRUIzT3arAVcKjA1PBi-fLJsDnrcZF_6Jd1V_h1vBXMsfEatEcfplDKvoPVDl9P9e6Nlg4JJ9y1-Km9YhiQS9ZR6QnMD7pcOVv2BRCuPJ5PswJk71fTldOI7Pj7M2QpHR0JoACo5q27NLfyVbPmdPetezSvYbAPyF2KyxmvIyhae__E4Zr_aEUQwnf48qD2XqAOQkXXidOZsaV0AjH1dqjlblNC-eFtHCou6QEt_X1ny4QeZtndRtz9z0x7V6qr4s9FHJJUPeqUcjsn4WmKD-OoEBixtqJGwVVKKkh1Ihqwv3zDV3JYFcT28aLLka8t-_GyYaqkYiQAEIkHD_ypcDamzKhnUtd_0_8cFFyR_Pwsv7YYPNl5SqSpZBfrlhKycOhpBPAmAlMrE01iggr2wwx2n0R5xa2tYnW5wCTl6ip8A02yqUyiRHmv60G92Qm2yd6wcsMgotoQbW-MOBaE_5RyPMS0enhwTIsm81qeoh8aZgeXIQPlUF9oJeyB6BSbiRw8qIbrbyKByC9R2SHxzzP8gDJnyM-D72khWkvaBJg_HrvnOYEAFIUnaRCeGEUiRkY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/products/pro",
+					"protocol": "localhost:8000",
+					"host": [],
+					"path": [
+						"api",
+						"products",
+						"pro"
+					]
+				}
+			},
+			"response": [
+				{
+					"msg": "All Products",
+					"status": 200,
+					"data": [
+						{
+							"id": 1,
+							"name": "car",
+							"quantity": 145,
+							"price": 784521,
+							"description": "dsds llklkl o ih ujhjh h jh",
+							"photo": null,
+							"created_at": "2020-11-27T18:18:22.000000Z",
+							"updated_at": "2020-11-27T18:18:22.000000Z"
+						},
+						{
+							"id": 2,
+							"name": "mobile",
+							"quantity": 145,
+							"price": 784521,
+							"description": "dsds llklkl o ih ujhjh h jh",
+							"photo": null,
+							"created_at": "2020-11-27T18:18:36.000000Z",
+							"updated_at": "2020-11-27T18:18:36.000000Z"
+						},
+						{
+							"id": 3,
+							"name": "laptop",
+							"quantity": 145,
+							"price": 784521,
+							"description": "dsds llklkl o ih ujhjh h jh",
+							"photo": null,
+							"created_at": "2020-11-27T18:18:47.000000Z",
+							"updated_at": "2020-11-27T18:18:47.000000Z"
+						},
+						{
+							"id": 4,
+							"name": "aeda",
+							"quantity": 145,
+							"price": 25,
+							"description": "dsds llklkl o ih ujhjh h jh",
+							"photo": null,
+							"created_at": "2020-11-28T06:42:15.000000Z",
+							"updated_at": "2020-11-28T06:42:15.000000Z"
+						}
+					]
+				}
+			]
+		},
+
+		{
+			"name": "store product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzNmNjNkNzk3YTk1MWM4ZDg4ZDM3YmQ1OTgzNTg0MTdkM2NhNTBkYjAxNzI3YWUwYmVhYjE3ODRiNDljODYxM2JiMzdlZGY5YjVlMGNiMTYiLCJpYXQiOjE2MDY1MDEwMjAsIm5iZiI6MTYwNjUwMTAyMCwiZXhwIjoxNjM4MDM3MDE5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.izFHyMRzo8LqNmZRxVulWmNe5pKw8sc-WZidzll2jHhOKmbXFYwK5gHJtFuhGkzjtgwP4UvBH9GTh3MYsMNFdrkvkp3yQsjtcA3KU9zArTRUIzT3arAVcKjA1PBi-fLJsDnrcZF_6Jd1V_h1vBXMsfEatEcfplDKvoPVDl9P9e6Nlg4JJ9y1-Km9YhiQS9ZR6QnMD7pcOVv2BRCuPJ5PswJk71fTldOI7Pj7M2QpHR0JoACo5q27NLfyVbPmdPetezSvYbAPyF2KyxmvIyhae__E4Zr_aEUQwnf48qD2XqAOQkXXidOZsaV0AjH1dqjlblNC-eFtHCou6QEt_X1ny4QeZtndRtz9z0x7V6qr4s9FHJJUPeqUcjsn4WmKD-OoEBixtqJGwVVKKkh1Ihqwv3zDV3JYFcT28aLLka8t-_GyYaqkYiQAEIkHD_ypcDamzKhnUtd_0_8cFFyR_Pwsv7YYPNl5SqSpZBfrlhKycOhpBPAmAlMrE01iggr2wwx2n0R5xa2tYnW5wCTl6ip8A02yqUyiRHmv60G92Qm2yd6wcsMgotoQbW-MOBaE_5RyPMS0enhwTIsm81qeoh8aZgeXIQPlUF9oJeyB6BSbiRw8qIbrbyKByC9R2SHxzzP8gDJnyM-D72khWkvaBJg_HrvnOYEAFIUnaRCeGEUiRkY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "post",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "aeda",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": 25,
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": 145,
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "dsds llklkl o ih ujhjh h jh",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/products/pro",
+					"protocol": "localhost:8000",
+					"host": [],
+					"path": [
+						"api",
+						"products",
+						"pro"
+					]
+				}
+			},
+			"response": [
+				{
+					"msg": "New Product Created Successfaly",
+					"status": 200,
+					"data": {
+						"name": "aedas",
+						"price": "25",
+						"quantity": "145",
+						"description": "dsds llklkl o ih ujhjh h jh",
+						"updated_at": "2020-11-28T19:14:44.000000Z",
+						"created_at": "2020-11-28T19:14:44.000000Z",
+						"id": 5
+					}
+				}
+			]
+		},
+
+		{
+			"name": "show product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzNmNjNkNzk3YTk1MWM4ZDg4ZDM3YmQ1OTgzNTg0MTdkM2NhNTBkYjAxNzI3YWUwYmVhYjE3ODRiNDljODYxM2JiMzdlZGY5YjVlMGNiMTYiLCJpYXQiOjE2MDY1MDEwMjAsIm5iZiI6MTYwNjUwMTAyMCwiZXhwIjoxNjM4MDM3MDE5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.izFHyMRzo8LqNmZRxVulWmNe5pKw8sc-WZidzll2jHhOKmbXFYwK5gHJtFuhGkzjtgwP4UvBH9GTh3MYsMNFdrkvkp3yQsjtcA3KU9zArTRUIzT3arAVcKjA1PBi-fLJsDnrcZF_6Jd1V_h1vBXMsfEatEcfplDKvoPVDl9P9e6Nlg4JJ9y1-Km9YhiQS9ZR6QnMD7pcOVv2BRCuPJ5PswJk71fTldOI7Pj7M2QpHR0JoACo5q27NLfyVbPmdPetezSvYbAPyF2KyxmvIyhae__E4Zr_aEUQwnf48qD2XqAOQkXXidOZsaV0AjH1dqjlblNC-eFtHCou6QEt_X1ny4QeZtndRtz9z0x7V6qr4s9FHJJUPeqUcjsn4WmKD-OoEBixtqJGwVVKKkh1Ihqwv3zDV3JYFcT28aLLka8t-_GyYaqkYiQAEIkHD_ypcDamzKhnUtd_0_8cFFyR_Pwsv7YYPNl5SqSpZBfrlhKycOhpBPAmAlMrE01iggr2wwx2n0R5xa2tYnW5wCTl6ip8A02yqUyiRHmv60G92Qm2yd6wcsMgotoQbW-MOBaE_5RyPMS0enhwTIsm81qeoh8aZgeXIQPlUF9oJeyB6BSbiRw8qIbrbyKByC9R2SHxzzP8gDJnyM-D72khWkvaBJg_HrvnOYEAFIUnaRCeGEUiRkY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "get",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/products/pro/1",
+					"protocol": "localhost:8000",
+					"host": [],
+					"path": [
+						"api",
+						"products",
+						"pro",
+						1
+					]
+				}
+			},
+			"response": [
+				{
+					"msg": "",
+					"status": 200,
+					"data": {
+						"id": 1,
+						"name": "car",
+						"quantity": 145,
+						"price": 784521,
+						"description": "dsds llklkl o ih ujhjh h jh",
+						"photo": null,
+						"created_at": "2020-11-27T18:18:22.000000Z",
+						"updated_at": "2020-11-27T18:18:22.000000Z"
+					}
+				}
+			]
+		},
+
+		{
+			"name": "update product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "Authorization",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzNmNjNkNzk3YTk1MWM4ZDg4ZDM3YmQ1OTgzNTg0MTdkM2NhNTBkYjAxNzI3YWUwYmVhYjE3ODRiNDljODYxM2JiMzdlZGY5YjVlMGNiMTYiLCJpYXQiOjE2MDY1MDEwMjAsIm5iZiI6MTYwNjUwMTAyMCwiZXhwIjoxNjM4MDM3MDE5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.izFHyMRzo8LqNmZRxVulWmNe5pKw8sc-WZidzll2jHhOKmbXFYwK5gHJtFuhGkzjtgwP4UvBH9GTh3MYsMNFdrkvkp3yQsjtcA3KU9zArTRUIzT3arAVcKjA1PBi-fLJsDnrcZF_6Jd1V_h1vBXMsfEatEcfplDKvoPVDl9P9e6Nlg4JJ9y1-Km9YhiQS9ZR6QnMD7pcOVv2BRCuPJ5PswJk71fTldOI7Pj7M2QpHR0JoACo5q27NLfyVbPmdPetezSvYbAPyF2KyxmvIyhae__E4Zr_aEUQwnf48qD2XqAOQkXXidOZsaV0AjH1dqjlblNC-eFtHCou6QEt_X1ny4QeZtndRtz9z0x7V6qr4s9FHJJUPeqUcjsn4WmKD-OoEBixtqJGwVVKKkh1Ihqwv3zDV3JYFcT28aLLka8t-_GyYaqkYiQAEIkHD_ypcDamzKhnUtd_0_8cFFyR_Pwsv7YYPNl5SqSpZBfrlhKycOhpBPAmAlMrE01iggr2wwx2n0R5xa2tYnW5wCTl6ip8A02yqUyiRHmv60G92Qm2yd6wcsMgotoQbW-MOBaE_5RyPMS0enhwTIsm81qeoh8aZgeXIQPlUF9oJeyB6BSbiRw8qIbrbyKByC9R2SHxzzP8gDJnyM-D72khWkvaBJg_HrvnOYEAFIUnaRCeGEUiRkY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "post",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+				],
+				"body": {
+					"mode": "row",
+					"row": [
+						"name" : "ali",
+						"quantity" : 50,
+						"price" : 100,
+						"description" : "asdsds fsf se fed fe  edrf"
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/products/pro/2",
+					"protocol": "localhost:8000",
+					"host": [],
+					"path": [
+						"api",
+						"products",
+						"pro",
+						2
+					]
+				}
+			},
+			"response": [
+				{
+					"msg": "The Product Updated Successfaly",
+					"status": 200,
+					"data": {
+						"id": 2,
+						"name": "ali",
+						"quantity": 50,
+						"price": 100,
+						"description": "asdsds fsf se fed fe  edrf",
+						"photo": null,
+						"created_at": "2020-11-27T18:18:36.000000Z",
+						"updated_at": "2020-11-28T19:21:07.000000Z"
+					}
+				}
+			]
+		},
+
+	],
+	"protocolProfileBehavior": {}
+}
